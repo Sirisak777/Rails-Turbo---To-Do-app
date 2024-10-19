@@ -1,0 +1,16 @@
+<h1>Create Task</h1>
+
+<%= form_with(model: @task, local: false) do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <div>
+    <%= form.label :category_id, "Category" %>
+    <%= form.collection_select :category_id, @categories, :id, :name %>
+  </div>
+  
+  <%= form.hidden_field :status, value: "incomplete" %> <!-- แก้ไขที่นี่ -->
+  
+  <%= form.submit "Create Task" %>
+<% end %>

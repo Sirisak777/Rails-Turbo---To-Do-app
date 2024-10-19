@@ -1,0 +1,8 @@
+<turbo-stream action="append" target="task_list">
+  <template>
+    <li id="<%= dom_id(@task) %>">
+      <%= @task.name %> (<%= @task.category.name %>)
+      <%= link_to "Mark as complete", complete_task_path(@task), method: :patch %>
+    </li>
+  </template>
+</turbo-stream>
